@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
-import './DollarPrintersLoading.scss';
+import './GlobalLoading.scss';
 import LOGO from './Logo/NILOTE.png';
 
 const DollarPrintersLoading = () => {
