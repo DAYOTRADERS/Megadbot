@@ -39,7 +39,7 @@ const MainTitleBar = () => {
                     <div className='main-title-bar__right'>
                         <Text size='m' weight='bold' color='prominent'>
                             <a href=''>
-                            <Localize i18n_default_text="FINEST ANALYSIS" />
+                            <Localize i18n_default_text="DollarPrinters Analysis" />
                             </a>
                         </Text>
                         <AccountTypeDropdown />
@@ -53,7 +53,7 @@ const MainTitleBar = () => {
                 <React.Fragment>
                     <Text weight='bold' className='main-title-bar__text' color='prominent'>
                             <a href=''>
-                                <Localize i18n_default_text="FINEST ANALYSIS" />
+                                <Localize i18n_default_text="DollarPrinters Analysis" />
                             </a>
                     </Text>
                     <div className='main-title-bar-mobile'>

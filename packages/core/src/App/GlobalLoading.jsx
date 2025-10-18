@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
-import './GlobalLoading.scss';
+import './DollarPrintersLoading.scss';
 import LOGO from './Logo/NILOTE.png';
 
-const GlobalLoading = () => {
+const DollarPrintersLoading = () => {
     const [progress, setProgress] = useState(0);
     const controls = useAnimation();
     const [showElements, setShowElements] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [activeTab, setActiveTab] = useState('markets');
     const [marketData, setMarketData] = useState({
         eurusd: `1.08${Math.floor(Math.random() * 9)}`,
         btcusd: `6${Math.floor(Math.random() * 9000) + 1000}`,
@@ -83,465 +84,408 @@ const GlobalLoading = () => {
                     L 1000,50`;
 
     return (
-        <div className='global-loading'>
-            {/* Grid background */}
-            <div className='grid-background'>
-                <div className='grid-lines'></div>
-                <div className='grid-overlay'></div>
+        <div className='dollar-printers-loading'>
+            {/* Modern gradient background */}
+            <div className='modern-background'>
+                <div className='gradient-orbs'>
+                    <div className='orb orb-1'></div>
+                    <div className='orb orb-2'></div>
+                    <div className='orb orb-3'></div>
+                </div>
+                <div className='grid-pattern'></div>
             </div>
 
-            {/* Floating data points - reduced on mobile */}
-            <div className='data-points-container'>
-                {Array.from({ length: isMobile ? 8 : 25 }).map((_, i) => (
+            {/* Currency particles */}
+            <div className='currency-particles'>
+                {Array.from({ length: isMobile ? 12 : 30 }).map((_, i) => (
                     <motion.div
                         key={i}
-                        className='data-point'
+                        className='currency-symbol'
                         initial={{
                             opacity: 0,
-                            x: Math.random() * 100 - 50,
-                            y: Math.random() * 100 - 50,
+                            x: Math.random() * window.innerWidth,
+                            y: Math.random() * window.innerHeight,
+                            rotate: Math.random() * 360
                         }}
                         animate={{
                             opacity: [0, 0.8, 0],
-                            scale: [0, 1.3, 0],
-                            rotate: [0, 360],
-                        }}
-                        transition={{
-                            duration: 4 + Math.random() * 3,
-                            repeat: Infinity,
-                            delay: Math.random() * 6,
-                            ease: "easeInOut",
-                        }}
-                    />
-                ))}
-            </div>
-
-            {/* Enhanced particle effects */}
-            <div className='particle-effects'>
-                {Array.from({ length: isMobile ? 5 : 15 }).map((_, i) => (
-                    <motion.div
-                        key={`particle-${i}`}
-                        className='particle'
-                        initial={{
-                            opacity: 0,
-                            x: Math.random() * window.innerWidth,
-                            y: Math.random() * window.innerHeight,
-                        }}
-                        animate={{
-                            opacity: [0, 0.6, 0],
-                            scale: [0, 1, 0],
+                            scale: [0, 1.2, 0],
+                            rotate: 360,
                             x: Math.random() * window.innerWidth,
                             y: Math.random() * window.innerHeight,
                         }}
                         transition={{
-                            duration: 6 + Math.random() * 4,
+                            duration: 8 + Math.random() * 8,
                             repeat: Infinity,
-                            delay: Math.random() * 8,
+                            delay: Math.random() * 5,
                             ease: "easeInOut",
-                        }}
-                    />
-                ))}
-            </div>
-
-            {/* Binary rain effect - reduced on mobile */}
-            <div className='binary-rain'>
-                {Array.from({ length: isMobile ? 10 : 30 }).map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className='binary-digit'
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
-                        }}
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: '100vh', opacity: [0, 0.7, 0] }}
-                        transition={{
-                            duration: 5 + Math.random() * 10,
-                            repeat: Infinity,
-                            ease: 'linear',
                         }}
                     >
-                        {Math.random() > 0.5 ? '1' : '0'}
+                        {['$', '€', '£', '¥', '₿', '₽'][Math.floor(Math.random() * 6)]}
                     </motion.div>
                 ))}
             </div>
 
-            {/* Main content */}
-            <motion.div
-                className='logo-container'
-                initial={{ opacity: 0, y: -20, scale: 0.9 }}
-                animate={controls}
-                variants={{
-                    visible: {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        transition: {
-                            duration: 0.8,
-                            ease: [0.17, 0.67, 0.24, 0.99],
-                        },
-                    },
-                }}
-            >
-                <img src={LOGO} alt='Deriv Logo' className='logo' />
+            {/* Main container with glass morphism */}
+            <div className='main-container'>
+                {/* Header section */}
                 <motion.div
-                    className='logo-glow'
-                    animate={{
-                        opacity: [0.3, 0.6, 0.3],
-                        scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                    }}
-                />
-            </motion.div>
-
-            {/* Deriv Branding */}
-            <div className='deriv-branding'>
-                <motion.div
-                    className='powered-by'
-                    initial={{ opacity: 0, y: 10 }}
+                    className='brand-header'
+                    initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.6 }}
+                    transition={{ duration: 0.8 }}
                 >
-                    <span className='brand-text'>Powered by</span>
-                    <span className='deriv-name'>Deriv</span>
-                    <div className='brand-glow'></div>
-                </motion.div>
-
-                <motion.div
-                    className='partnership'
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.6 }}
-                >
-                    <span className='brand-text'>In partnership with</span>
-                    <span className='deriv-name'>Deriv</span>
-                    <div className='brand-glow'></div>
-                </motion.div>
-            </div>
-
-            {showElements && (
-                <div className='content-wrapper'>
-                    {/* Trading terminal with holographic effect */}
-                    <motion.div
-                        className='trading-terminal'
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        <div className='terminal-header'>
-                            <div className='terminal-title'>MARKET DATA STREAM</div>
-                            <div className='terminal-status'>
-                                <span className='status-indicator'></span>
-                                LIVE
-                            </div>
+                    <div className='logo-section'>
+                        <motion.div
+                            className='logo-container'
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.3, duration: 0.6 }}
+                        >
+                            <img src={LOGO} alt='DollarPrinters Logo' className='logo' />
+                            <div className='logo-glow'></div>
+                        </motion.div>
+                        <div className='brand-text'>
+                            <h1 className='brand-name'>DollarPrinters</h1>
+                            <p className='brand-tagline'>Print Your Financial Future</p>
                         </div>
+                    </div>
+                    
+                    <div className='connection-status'>
+                        <div className='status-dot'></div>
+                        <span>Connected to Deriv API</span>
+                    </div>
+                </motion.div>
 
-                        <div className='chart-container'>
-                            <div className='chart-grid'>
-                                <div className='grid-line'></div>
-                                <div className='grid-line'></div>
-                                <div className='grid-line'></div>
-                                <div className='grid-line'></div>
-                                <div className='grid-line'></div>
+                {/* Dashboard grid */}
+                {showElements && (
+                    <div className='dashboard-grid'>
+                        {/* Left panel - Stats */}
+                        <motion.div
+                            className='stats-panel'
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.5 }}
+                        >
+                            <div className='panel-header'>
+                                <h3>Performance Metrics</h3>
+                                <div className='live-badge'>LIVE</div>
+                            </div>
+                            
+                            <div className='stats-grid'>
+                                <div className='stat-card'>
+                                    <div className='stat-icon'>⚡</div>
+                                    <div className='stat-info'>
+                                        <span className='stat-value'>98.7%</span>
+                                        <span className='stat-label'>Success Rate</span>
+                                    </div>
+                                    <div className='stat-trend up'>+2.3%</div>
+                                </div>
+                                
+                                <div className='stat-card'>
+                                    <div className='stat-icon'>🔄</div>
+                                    <div className='stat-info'>
+                                        <span className='stat-value'>1.2s</span>
+                                        <span className='stat-label'>Avg Response</span>
+                                    </div>
+                                    <div className='stat-trend down'>-0.4s</div>
+                                </div>
+                                
+                                <div className='stat-card'>
+                                    <div className='stat-icon'>📊</div>
+                                    <div className='stat-info'>
+                                        <span className='stat-value'>256</span>
+                                        <span className='stat-label'>Active Bots</span>
+                                    </div>
+                                    <div className='stat-trend up'>+12</div>
+                                </div>
+                                
+                                <div className='stat-card'>
+                                    <div className='stat-icon'>💰</div>
+                                    <div className='stat-info'>
+                                        <span className='stat-value'>$12.4K</span>
+                                        <span className='stat-label'>24h Profit</span>
+                                    </div>
+                                    <div className='stat-trend up'>+$842</div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Center panel - Main chart */}
+                        <motion.div
+                            className='chart-panel'
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.7 }}
+                        >
+                            <div className='panel-tabs'>
+                                <button 
+                                    className={`tab ${activeTab === 'markets' ? 'active' : ''}`}
+                                    onClick={() => setActiveTab('markets')}
+                                >
+                                    Market Data
+                                </button>
+                                <button 
+                                    className={`tab ${activeTab === 'analysis' ? 'active' : ''}`}
+                                    onClick={() => setActiveTab('analysis')}
+                                >
+                                    AI Analysis
+                                </button>
+                                <button 
+                                    className={`tab ${activeTab === 'bots' ? 'active' : ''}`}
+                                    onClick={() => setActiveTab('bots')}
+                                >
+                                    Trading Bots
+                                </button>
                             </div>
 
-                            <svg
-                                width='100%'
-                                height={isMobile ? '80' : '160'}
-                                viewBox='0 0 1000 100'
-                                className='chart-svg'
-                            >
-                                <defs>
-                                    <linearGradient id='chartGradient' x1='0%' y1='0%' x2='100%' y2='0%'>
-                                        <stop offset='0%' stopColor='#00BFFF' />
-                                        <stop offset='50%' stopColor='#1E90FF' />
-                                        <stop offset='100%' stopColor='#0066CC' />
-                                    </linearGradient>
-                                    <filter id='glow' x='-30%' y='-30%' width='160%' height='160%'>
-                                        <feGaussianBlur stdDeviation='4' result='blur' />
-                                        <feComposite in='SourceGraphic' in2='blur' operator='over' />
-                                    </filter>
-                                </defs>
-                                <motion.path
-                                    d={chartPath}
-                                    stroke='url(#chartGradient)'
-                                    strokeWidth='2'
-                                    fill='none'
-                                    filter='url(#glow)'
-                                    initial={{ pathLength: 0 }}
-                                    animate={{ pathLength: 1 }}
-                                    transition={{ duration: 3, ease: 'easeInOut' }}
-                                />
-                                <AnimatePresence>
-                                    {progress < 100 && (
-                                        <motion.circle
-                                            cx='0'
-                                            cy='50'
-                                            r={isMobile ? '3' : '6'}
-                                            fill='url(#chartGradient)'
-                                            initial={{ x: 0 }}
-                                            animate={{
-                                                x: progress * 10,
-                                                y: [
-                                                    50, 30, 70, 40, 60, 30, 70, 50, 20, 60, 40, 70, 30, 50, 80, 40, 60,
-                                                    30, 70, 50,
-                                                ][Math.floor(progress / 5)],
-                                            }}
-                                            transition={{
-                                                duration: 0.1,
-                                                ease: 'linear',
-                                            }}
-                                        />
-                                    )}
-                                </AnimatePresence>
-                            </svg>
+                            <div className='chart-container'>
+                                <div className='chart-header'>
+                                    <div className='chart-title'>Real-time Market Stream</div>
+                                    <div className='time-frames'>
+                                        {['1H', '4H', '1D', '1W'].map(timeframe => (
+                                            <button key={timeframe} className='timeframe-btn'>{timeframe}</button>
+                                        ))}
+                                    </div>
+                                </div>
 
-                            {/* Candlestick animation */}
-                            <div className='candlestick-animation'>
-                                {Array.from({ length: isMobile ? 6 : 15 }).map((_, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className='candlestick'
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{
-                                            height: Math.random() * 20 + 5,
-                                            opacity: 1,
-                                            y: Math.random() * 20 - 10,
-                                        }}
-                                        transition={{
-                                            delay: i * 0.1,
-                                            duration: 0.5,
-                                            repeat: Infinity,
-                                            repeatType: 'reverse',
-                                            repeatDelay: (isMobile ? 6 : 15) * 0.1,
-                                        }}
+                                <div className='chart-visualization'>
+                                    <svg
+                                        width='100%'
+                                        height={isMobile ? '120' : '200'}
+                                        viewBox='0 0 1000 100'
+                                        className='chart-svg'
                                     >
-                                        <div className='wick' />
-                                        <div className='body' />
+                                        <defs>
+                                            <linearGradient id="dollarGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stopColor="#00D1B2" />
+                                                <stop offset="50%" stopColor="#009E87" />
+                                                <stop offset="100%" stopColor="#007A6B" />
+                                            </linearGradient>
+                                            <filter id="dollarGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                            </filter>
+                                        </defs>
+                                        <motion.path
+                                            d={chartPath}
+                                            stroke="url(#dollarGradient)"
+                                            strokeWidth="3"
+                                            fill="none"
+                                            filter="url(#dollarGlow)"
+                                            initial={{ pathLength: 0 }}
+                                            animate={{ pathLength: 1 }}
+                                            transition={{ duration: 2.5, ease: 'easeInOut' }}
+                                        />
+                                    </svg>
+
+                                    {/* Animated price markers */}
+                                    <div className='price-markers'>
+                                        {[0, 25, 50, 75, 100].map((position) => (
+                                            <motion.div
+                                                key={position}
+                                                className='price-marker'
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ delay: 1 + position * 0.02 }}
+                                            >
+                                                ${(65000 + Math.random() * 2000).toFixed(0)}
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Enhanced market ticker */}
+                                <div className='market-ticker'>
+                                    <div className='ticker-header'>
+                                        <span>Live Quotes</span>
+                                        <div className='ticker-controls'>
+                                            <button className='control-btn'>⏸️</button>
+                                            <button className='control-btn'>⏭️</button>
+                                        </div>
+                                    </div>
+                                    <div className='ticker-items'>
+                                        {Object.entries(marketData).map(([key, value]) => (
+                                            <motion.div
+                                                key={key}
+                                                className='ticker-item'
+                                                whileHover={{ scale: 1.05 }}
+                                                transition={{ type: "spring", stiffness: 300 }}
+                                            >
+                                                <span className='asset-name'>{key.toUpperCase()}</span>
+                                                <motion.span
+                                                    className='asset-price'
+                                                    key={`${key}-${value}`}
+                                                    initial={{ scale: 0.8 }}
+                                                    animate={{ scale: 1 }}
+                                                    transition={{ type: "spring", stiffness: 500 }}
+                                                >
+                                                    {value}
+                                                </motion.span>
+                                                <motion.span
+                                                    className='price-change'
+                                                    animate={{ 
+                                                        color: Math.random() > 0.5 ? '#00ff88' : '#ff4444',
+                                                        backgroundColor: Math.random() > 0.5 ? 'rgba(0, 255, 136, 0.1)' : 'rgba(255, 68, 68, 0.1)'
+                                                    }}
+                                                    transition={{ duration: 0.5 }}
+                                                >
+                                                    {Math.random() > 0.5 ? '+' : ''}{(Math.random() * 2).toFixed(2)}%
+                                                </motion.span>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Right panel - Bot activity */}
+                        <motion.div
+                            className='bots-panel'
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.9 }}
+                        >
+                            <div className='panel-header'>
+                                <h3>Active Printers</h3>
+                                <div className='bots-count'>12 Online</div>
+                            </div>
+
+                            <div className='bots-list'>
+                                {['Scalper Pro', 'Trend Rider', 'Arbitrage Master', 'AI Predictor', 'Momentum Hunter'].map((bot, index) => (
+                                    <motion.div
+                                        key={bot}
+                                        className='bot-item'
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 1.1 + index * 0.1 }}
+                                        whileHover={{ scale: 1.02 }}
+                                    >
+                                        <div className='bot-avatar'>
+                                            <div className='avatar-icon'>
+                                                {['🤖', '⚡', '🔮', '🎯', '🚀'][index]}
+                                            </div>
+                                            <div className='status-indicator'></div>
+                                        </div>
+                                        <div className='bot-details'>
+                                            <span className='bot-name'>{bot}</span>
+                                            <span className='bot-performance'>+${(Math.random() * 500).toFixed(2)}</span>
+                                        </div>
+                                        <div className='bot-progress'>
+                                            <div 
+                                                className='progress-fill'
+                                                style={{ width: `${70 + Math.random() * 30}%` }}
+                                            ></div>
+                                        </div>
                                     </motion.div>
                                 ))}
                             </div>
-                        </div>
-
-                        {/* Market data ticker with enhanced design */}
-                        <div className='market-ticker'>
-                            <div className='ticker-scroll'>
-                                <div className='ticker-item'>
-                                    <span className='ticker-label'>EUR/USD</span>
-                                    <motion.span
-                                        className='ticker-value'
-                                        key={`eurusd-${marketData.eurusd}`}
-                                        initial={{ y: 10, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -10, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        {marketData.eurusd}
-                                    </motion.span>
-                                    <motion.span
-                                        className='ticker-change'
-                                        animate={{ color: ['#00ff47', '#ffffff'] }}
-                                        transition={{ duration: 1, repeat: Infinity }}
-                                    >
-                                        +0.2%
-                                    </motion.span>
-                                </div>
-                                <div className='ticker-item'>
-                                    <span className='ticker-label'>BTC/USD</span>
-                                    <motion.span
-                                        className='ticker-value'
-                                        key={`btcusd-${marketData.btcusd}`}
-                                        initial={{ y: 10, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -10, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        {marketData.btcusd}
-                                    </motion.span>
-                                    <motion.span
-                                        className='ticker-change'
-                                        animate={{ color: ['#ff2e4f', '#ffffff'] }}
-                                        transition={{ duration: 1, repeat: Infinity }}
-                                    >
-                                        -1.5%
-                                    </motion.span>
-                                </div>
-                                <div className='ticker-item'>
-                                    <span className='ticker-label'>VOLATILITY</span>
-                                    <motion.span
-                                        className='ticker-value'
-                                        key={`vol-${marketData.volatility}`}
-                                        initial={{ y: 10, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -10, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        {marketData.volatility}
-                                    </motion.span>
-                                </div>
-                                <div className='ticker-item'>
-                                    <span className='ticker-label'>GOLD</span>
-                                    <motion.span
-                                        className='ticker-value'
-                                        key={`gold-${marketData.gold}`}
-                                        initial={{ y: 10, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -10, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        {marketData.gold}
-                                    </motion.span>
-                                </div>
-                                <div className='ticker-item'>
-                                    <span className='ticker-label'>S&P 500</span>
-                                    <motion.span
-                                        className='ticker-value'
-                                        key={`sp500-${marketData.sp500}`}
-                                        initial={{ y: 10, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -10, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        {marketData.sp500}
-                                    </motion.span>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Progress section with high-tech design */}
-                    <div className='progress-section'>
-                        <div className='progress-container'>
-                            <div className='progress-labels'>
-                                <span className='progress-text'>{progress}%</span>
-                                <span className='progress-message'>Initializing trading modules...</span>
-                            </div>
-                            <div className='progress-track'>
-                                <motion.div
-                                    className='progress-bar'
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${progress}%` }}
-                                    transition={{ duration: 10, ease: 'linear' }}
-                                >
-                                    <div className='progress-glow' />
-                                    <div className='progress-pulse'></div>
-                                </motion.div>
-                            </div>
-                            <div className='progress-markers'>
-                                <div className='marker'></div>
-                                <div className='marker'></div>
-                                <div className='marker'></div>
-                                <div className='marker'></div>
-                                <div className='marker'></div>
-                            </div>
-                        </div>
+                        </motion.div>
                     </div>
+                )}
 
-                    {/* Animated trading bots with enhanced effects */}
-                    <div className='trading-bots'>
-                        {['📈', '💹', '📊', '📉', '💲'].map((emoji, i) => (
-                            <motion.div
-                                key={i}
-                                className='bot-icon'
-                                initial={{ x: -100, opacity: 0, rotate: -20 }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1,
-                                    rotate: 0,
-                                    y: [0, -10, 0],
-                                }}
-                                transition={{
-                                    delay: 0.8 + i * 0.2,
-                                    duration: 0.8,
-                                    y: {
-                                        duration: 2 + Math.random(),
-                                        repeat: Infinity,
-                                        ease: 'easeInOut',
-                                    },
-                                }}
-                            >
-                                {emoji}
-                                <motion.div
-                                    className='bot-trail'
-                                    animate={{
-                                        scale: [0.8, 1.2, 0.8],
-                                        opacity: [0.4, 0.8, 0.4],
-                                    }}
-                                    transition={{
-                                        duration: 1.5,
-                                        repeat: Infinity,
-                                        delay: i * 0.1,
-                                    }}
-                                />
-                                <motion.div
-                                    className='bot-connection'
-                                    initial={{ scale: 0 }}
-                                    animate={{ scale: 1 }}
-                                    transition={{ delay: 1.5 + i * 0.2 }}
-                                />
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {/* Status message with typing effect */}
-            <AnimatePresence>
+                {/* Progress section */}
                 <motion.div
-                    className='status-message'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                        opacity: 1,
-                        y: 0,
-                        transition: { delay: 0.6 },
-                    }}
-                    exit={{ opacity: 0 }}
+                    className='progress-section'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2 }}
                 >
-                    <div className='typing-indicator'>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div className='progress-header'>
+                        <h3>System Initialization</h3>
+                        <span className='progress-percent'>{progress}%</span>
                     </div>
-                    <motion.span
-                        animate={{
-                            backgroundPosition: ['0% 50%', '100% 50%'],
-                        }}
-                        transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                            repeatType: 'reverse',
-                        }}
-                    >
-                        Preparing your ultimate trading experience...
-                    </motion.span>
-                </motion.div>
-            </AnimatePresence>
+                    
+                    <div className='progress-container'>
+                        <div className='progress-track'>
+                            <motion.div
+                                className='progress-fill'
+                                initial={{ width: 0 }}
+                                animate={{ width: `${progress}%` }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <div className='progress-shine'></div>
+                            </motion.div>
+                        </div>
+                        
+                        <div className='progress-steps'>
+                            {['API Connect', 'Data Stream', 'Bot Setup', 'Security Check', 'Ready'].map((step, index) => (
+                                <div
+                                    key={step}
+                                    className={`progress-step ${progress >= (index + 1) * 20 ? 'completed' : ''}`}
+                                >
+                                    <div className='step-indicator'>
+                                        {progress >= (index + 1) * 20 ? '✓' : index + 1}
+                                    </div>
+                                    <span className='step-label'>{step}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
-            {/* Connection nodes animation */}
-            <div className='connection-nodes'>
-                {Array.from({ length: isMobile ? 4 : 8 }).map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className='node'
-                        animate={{
-                            scale: [0.8, 1.2, 0.8],
-                            opacity: [0.5, 1, 0.5],
-                        }}
-                        transition={{
-                            duration: 2 + Math.random() * 2,
-                            repeat: Infinity,
-                            delay: Math.random() * 2,
-                        }}
-                    >
-                        <div className='node-pulse'></div>
-                    </motion.div>
-                ))}
+                    <div className='loading-message'>
+                        <div className='typing-animation'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <motion.span
+                            animate={{
+                                backgroundPosition: ['0% 50%', '100% 50%'],
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                repeatType: 'reverse',
+                            }}
+                        >
+                            {progress < 30 && 'Connecting to Deriv trading servers...'}
+                            {progress >= 30 && progress < 60 && 'Loading market data streams...'}
+                            {progress >= 60 && progress < 90 && 'Initializing AI trading algorithms...'}
+                            {progress >= 90 && 'Finalizing security protocols...'}
+                        </motion.span>
+                    </div>
+                </motion.div>
+
+                {/* Footer */}
+                <motion.div
+                    className='footer'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5 }}
+                >
+                    <div className='partnership'>
+                        <span>Powered by</span>
+                        <div className='partner-logo'>Deriv</div>
+                        <span>Technology</span>
+                    </div>
+                    
+                    <div className='security-badge'>
+                        <div className='shield-icon'>🛡️</div>
+                        <span>256-bit SSL Encrypted</span>
+                    </div>
+                </motion.div>
+            </div>
+
+            {/* Floating action buttons */}
+            <div className='floating-actions'>
+                <motion.button
+                    className='fab'
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                >
+                    📊
+                </motion.button>
+                <motion.button
+                    className='fab'
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                >
+                    ⚙️
+                </motion.button>
             </div>
         </div>
     );
 };
 
-export default GlobalLoading;
+export default DollarPrintersLoading;

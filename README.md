@@ -290,6 +290,6 @@ If preferable to use manual deployment, you can use [gh-pages](https://pages.git
 # BMBTRADERSTOOL
 # TTOOL
 # Masters
-# FINEST ANALYSIS-MAIN
+# DollarPrinters Analysis-MAIN
 # merrick-main
 # BURU
