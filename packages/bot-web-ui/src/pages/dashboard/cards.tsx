@@ -8,7 +8,6 @@ import { useDBotStore } from 'Stores/useDBotStore';
 import { rudderStackSendOpenEvent } from '../../analytics/rudderstack-common-events';
 import { rudderStackSendDashboardClickEvent } from '../../analytics/rudderstack-dashboard';
 import DashboardBotList from './bot-list/dashboard-bot-list';
-import './cards.futuristic.scss'; // Import the futuristic styles
 
 type TCardProps = {
     has_dashboard_strategies: boolean;
@@ -108,7 +107,6 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies, children }: TCard
                 <div
                     className={classNames('tab__dashboard__table__tiles', {
                         'tab__dashboard__table__tiles--minimized': has_dashboard_strategies && is_mobile,
-                        'tab__dashboard__table__tiles--futuristic': true,
                     })}
                     id='tab__dashboard__table__tiles'
                 >
@@ -119,8 +117,6 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies, children }: TCard
                                 key={content}
                                 className={classNames('tab__dashboard__table__block', {
                                     'tab__dashboard__table__block--minimized': has_dashboard_strategies && is_mobile,
-                                    'tab__dashboard__table__block--futuristic': true,
-                                    'tab__dashboard__table__block--cyber': true,
                                 })}
                                 onClick={() => {
                                     callback();
@@ -132,27 +128,18 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies, children }: TCard
                                 }}
                                 tabIndex={0}
                             >
-                                <div className='tab__dashboard__table__icon-wrapper'>
-                                    <Icon
-                                        className={classNames('tab__dashboard__table__images', {
-                                            'tab__dashboard__table__images--minimized': has_dashboard_strategies,
-                                            'tab__dashboard__table__images--futuristic': true,
-                                        })}
-                                        width='6rem'
-                                        height='6rem'
-                                        icon={icon}
-                                        id={icon}
-                                    />
-                                    <div className='tab__dashboard__table__glow-effect'></div>
-                                </div>
-                                <Text 
-                                    color='prominent' 
-                                    size={is_mobile ? 'xxs' : 'xs'}
-                                    className='tab__dashboard__table__text--futuristic'
-                                >
+                                <Icon
+                                    className={classNames('tab__dashboard__table__images', {
+                                        'tab__dashboard__table__images--minimized': has_dashboard_strategies,
+                                    })}
+                                    width='8rem'
+                                    height='8rem'
+                                    icon={icon}
+                                    id={icon}
+                                />
+                                <Text color='prominent' size={is_mobile ? 'xxs' : 'xs'}>
                                     {content}
                                 </Text>
-                                <div className='tab__dashboard__table__hover-beam'></div>
                             </div>
                         );
                     })}
