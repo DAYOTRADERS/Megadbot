@@ -32,7 +32,10 @@
 }
 
 .tab__dashboard__table__block--futuristic {
-    background: linear-gradient(145deg, #0d1424 0%, #1c2a45 100%);
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(79, 172, 254, 0.1) 0%, transparent 50%),
+        linear-gradient(145deg, #0d1424 0%, #1c2a45 100%);
     border: 1px solid #00f2fe33;
     border-radius: 12px;
     padding: 30px 20px;
@@ -47,6 +50,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: cyberFadeIn 0.6s ease-out;
 }
 
 .tab__dashboard__table__block--futuristic::before {
@@ -71,13 +75,6 @@
         0 10px 30px rgba(0, 242, 254, 0.3),
         0 0 0 1px rgba(0, 242, 254, 0.1),
         inset 0 0 20px rgba(0, 242, 254, 0.1);
-}
-
-.tab__dashboard__table__block--cyber {
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(79, 172, 254, 0.1) 0%, transparent 50%),
-        linear-gradient(145deg, #0d1424 0%, #1c2a45 100%);
 }
 
 .tab__dashboard__table__icon-wrapper {
@@ -143,6 +140,23 @@
     width: 80%;
 }
 
+/* Animation for initial load */
+@keyframes cyberFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab__dashboard__table__block--futuristic:nth-child(1) { animation-delay: 0.1s; }
+.tab__dashboard__table__block--futuristic:nth-child(2) { animation-delay: 0.2s; }
+.tab__dashboard__table__block--futuristic:nth-child(3) { animation-delay: 0.3s; }
+.tab__dashboard__table__block--futuristic:nth-child(4) { animation-delay: 0.4s; }
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
     .tab__dashboard__table__tiles--futuristic {
@@ -189,27 +203,6 @@
     outline-offset: 2px;
 }
 
-/* Animation for initial load */
-@keyframes cyberFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.tab__dashboard__table__block--futuristic {
-    animation: cyberFadeIn 0.6s ease-out;
-}
-
-.tab__dashboard__table__block--futuristic:nth-child(1) { animation-delay: 0.1s; }
-.tab__dashboard__table__block--futuristic:nth-child(2) { animation-delay: 0.2s; }
-.tab__dashboard__table__block--futuristic:nth-child(3) { animation-delay: 0.3s; }
-.tab__dashboard__table__block--futuristic:nth-child(4) { animation-delay: 0.4s; }
-
 /* Grid layout adjustments for different screen sizes */
 @media (min-width: 1024px) {
     .tab__dashboard__table__tiles--futuristic {
@@ -221,4 +214,3 @@
     .tab__dashboard__table__tiles--futuristic {
         grid-template-columns: repeat(2, 1fr);
     }
-}
