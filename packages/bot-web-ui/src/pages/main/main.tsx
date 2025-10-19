@@ -173,18 +173,6 @@ const AppWrapper = observer(() => {
                         top
                     >
 
-                         <div
-                            label={
-                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
-                                    <FaExchangeAlt size={14} />
-                                    Free Bots
-                                </span>
-                            }
-                            id='id-botlist'
-                        >
-                            <Botlist />
-                        </div>
-
                         <div
 
                             label={
@@ -233,6 +221,17 @@ const AppWrapper = observer(() => {
                             id='id-tradeveiw'
                         >
                             <Tradeveiw />
+                        </div>
+                          <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaExchangeAlt size={14} />
+                                    Free Bots
+                                </span>
+                            }
+                            id='id-botlist'
+                        >
+                            <Botlist />
                         </div>
 
                         <div
