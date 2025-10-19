@@ -11,6 +11,9 @@ import Under8 from './bots/DoubleOverWithanalysis.xml';
 import Dodo from './bots/Aiunder8-7-6-5recoveryunder3-4-5adjustable.xml';
 import Pepe from './bots/PROFITGAINERXVTscunentrypointbeforrun.xml';
 import Kuku from './bots/PROFITGAINERXVT.xml';
+import Signal from './bots/SignalSniperAutoBot.xml';
+import Algo from './bots/AlgoSniper.xml';
+import Dollarprint from './bots/DollarPrintAi.xml';
 
 // Ensure Blockly is available globally
 const getBlockly = () => {
@@ -22,6 +25,27 @@ const getBlockly = () => {
 
 // Static bot configurations
 const STATIC_BOTS = {
+    signal_sniper: {
+        id: 'signal_sniper_auto_bot',
+        name: 'Signal Sniper Auto Bot',
+        xml: Signal,
+        timestamp: Date.now(),
+        save_type: save_types.LOCAL,
+    },
+    algo_sniper: {
+        id: 'algo_sniper',
+        name: 'Algo Sniper',
+        xml: Algo,
+        timestamp: Date.now(),
+        save_type: save_types.LOCAL,
+    },
+    dollar_print: {
+        id: 'dollar_print_ai',
+        name: 'Dollar Print AI',
+        xml: Dollarprint,
+        timestamp: Date.now(),
+        save_type: save_types.LOCAL,
+    },
     auto_robot: {
         id: 'auto_robot',
         name: 'BRAM EVEN ODD PRINTER',

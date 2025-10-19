@@ -5,7 +5,7 @@ const AiPage: React.FC = () => {
     return (
         <div className={styles.container}>
             <iframe
-                src="https://serene-marzipan-19f3d1.netlify.app/"
+                src="https://tracktool.netlify.app/"
                 title="AiPage"
                 className={styles.iframe}
                 loading="lazy"
