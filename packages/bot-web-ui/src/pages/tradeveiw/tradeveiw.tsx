@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './finesttool.module.scss'; // assuming you renamed it correctly
+import styles from './tradeveiw.module.scss'; // assuming you renamed it correctly
+import Tradeveiw from '../tradeveiw';
 
-const Finesttool = () => {
+const Tradeveiw = () => {
     return (
         <div className={styles.container}>
             <iframe
@@ -14,4 +15,4 @@ const Finesttool = () => {
     );
 };
 
-export default Finesttool;
+export default Tradeveiw;

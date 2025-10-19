@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './finesttool.module.scss'; // assuming you renamed it correctly
+import styles from './aitool.module.scss'; // assuming you renamed it correctly
 
-const Finesttool = () => {
+const Aitool = () => {
     return (
         <div className={styles.container}>
             <iframe
-                src="https://charts.deriv.com/deriv"
+                src="https://peaceful-kashata-8e8e24.netlify.app/"
                 title="DollarPrinters Analysis"
                 className={styles.iframe}
                 allowFullScreen
@@ -14,4 +14,4 @@ const Finesttool = () => {
     );
 };
 
-export default Finesttool;
+export default Aitool;

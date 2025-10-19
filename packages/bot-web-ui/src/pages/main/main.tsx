@@ -24,6 +24,9 @@ import Copytrading from '../copytrading';
 import Botlist from '../botlist';
 import Smartedge from '../smartedge';
 import Signals from '../signals';
+import Tradeveiw from '../tradeveiw';
+import Aitool from '../aitool';
+import Neph from '../neph';
 import { FaChartBar, FaChartLine, FaPuzzlePiece, FaChessKnight, FaUsers, FaShieldAlt, FaRobot, FaTachometerAlt, FaExchangeAlt, FaCopy, FaLightbulb } from 'react-icons/fa';
 import { MdSchema, MdGridOn } from 'react-icons/md';
 
@@ -57,7 +60,7 @@ const AppWrapper = observer(() => {
     const Dptool = lazy(() => import('../dptool/dptool'));
 
 
-    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist', 'finesttool', 'copytrading', 'dptool', 'smartedge', 'signals'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist', 'finesttool', 'copytrading', 'dptool', 'smartedge', 'signals', 'tradeveiw', 'aitool', 'neph'];
 
     let tab_value: number | string = active_tab;
     const GetHashedValue = (tab: number) => {
@@ -169,6 +172,19 @@ const AppWrapper = observer(() => {
                         onTabItemClick={handleTabChange}
                         top
                     >
+
+                         <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaExchangeAlt size={14} />
+                                    Free Bots
+                                </span>
+                            }
+                            id='id-botlist'
+                        >
+                            <Botlist />
+                        </div>
+
                         <div
 
                             label={
@@ -207,17 +223,16 @@ const AppWrapper = observer(() => {
                             <Chart show_digits_stats={false} />
                         </div>
 
-
-                        <div
+                           <div
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
-                                    <FaExchangeAlt size={14} />
-                                    Free Bots
+                                    <FaLightbulb size={14} />
+                                    Tradeveiw
                                 </span>
                             }
-                            id='id-botlist'
+                            id='id-tradeveiw'
                         >
-                            <Botlist />
+                            <Tradeveiw />
                         </div>
 
                         <div
@@ -231,6 +246,7 @@ const AppWrapper = observer(() => {
                         >
                             <Finesttool />
                         </div>
+
 
                         <div
                             label={
@@ -256,6 +272,30 @@ const AppWrapper = observer(() => {
                             <Dptool />
                         </div>
 
+                             <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaShieldAlt size={14} />
+                                    Neph
+                                </span>
+                            }
+                            id='id-neph'
+                        >
+                            <Neph />
+                        </div>
+
+                            <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaChessKnight size={14} />
+                                    AI Tool
+                                </span>
+                            }
+                            id='id-ai-tool'
+                        >
+                            <Aitool />
+                        </div>
+
                         <div
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
@@ -279,6 +319,9 @@ const AppWrapper = observer(() => {
                         >
                             <Signals />
                         </div>
+
+
+                    
 
 
 
