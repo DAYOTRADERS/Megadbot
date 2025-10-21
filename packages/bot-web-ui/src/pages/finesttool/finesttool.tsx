@@ -5,8 +5,8 @@ const Finesttool = () => {
     return (
         <div className={styles.container}>
             <iframe
-                src="https://charts.deriv.com/deriv"
-                title="DollarPrinters Analysis"
+                src="https://api.binarytool.site/"
+                title="Finest Analysis"
                 className={styles.iframe}
                 allowFullScreen
             />
