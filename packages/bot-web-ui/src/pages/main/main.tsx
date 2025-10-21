@@ -60,7 +60,7 @@ const AppWrapper = observer(() => {
     const Dptool = lazy(() => import('../dptool/dptool'));
 
 
-    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist', 'finesttool', 'copytrading', 'dptool', 'smartedge', 'signals', 'tradeveiw', 'aitool', 'neph'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist',  'finesttool', 'strategy', 'riskManagementCalculator', 'copytrading', 'dptool', 'smartedge', 'signals', 'tradeveiw', 'aitool', 'neph'];
 
     let tab_value: number | string = active_tab;
     const GetHashedValue = (tab: number) => {
@@ -211,7 +211,31 @@ const AppWrapper = observer(() => {
                             <Chart show_digits_stats={false} />
                         </div>
 
-                           <div
+                        <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaUsers size={14} />
+                                    Risk Management Calculator
+                                </span>
+                            }
+                            id='id-risk-management-calculator'
+                        >
+                            <RiskManagementCalculator />
+                        </div>
+
+                        <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaPuzzlePiece size={14} />
+                                    Strategy
+                                </span>
+                            }
+                            id='id-strategy'
+                        >
+                            <Strategy />
+                        </div>
+
+                       <div
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
                                     <FaLightbulb size={14} />
@@ -275,7 +299,7 @@ const AppWrapper = observer(() => {
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
                                     <FaShieldAlt size={14} />
-                                    Neph
+                                    Smarttool
                                 </span>
                             }
                             id='id-neph'
@@ -318,6 +342,7 @@ const AppWrapper = observer(() => {
                         >
                             <Signals />
                         </div>
+
 
 
                     
