@@ -283,17 +283,6 @@ const AppWrapper = observer(() => {
                             <Copytrading />
                         </div>
 
-                        <div
-                            label={
-                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
-                                    <MdSchema size={14} />
-                                    DP Tool
-                                </span>
-                            }
-                            id='id-dp-tool'
-                        >
-                            <Dptool />
-                        </div>
 
                              <div
                             label={
@@ -305,18 +294,6 @@ const AppWrapper = observer(() => {
                             id='id-neph'
                         >
                             <Neph />
-                        </div>
-
-                            <div
-                            label={
-                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
-                                    <FaChessKnight size={14} />
-                                    AI Tool
-                                </span>
-                            }
-                            id='id-ai-tool'
-                        >
-                            <Aitool />
                         </div>
 
                         <div
