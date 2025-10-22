@@ -116,10 +116,10 @@ const DefaultHeader = observer(() => {
                                     <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
                                         <Icon icon='IcFacebook' width={20} height={20} />
                                     </a>
-                                    <a href='https://whatsapp.com/channel/0029Vb6u88m90x34T43vYd0l' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                    <a href='https://www.whatsapp.com/channel/0029VbBGKgD1HspoV4HUQw3f' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
                                         <Icon icon='IcWhatsappFilled' width={20} height={20} />
                                     </a>
-                                    <a href='https://t.me/wealthdbottrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                    <a href='https://t.me/Dbottradertrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                         <Icon icon='IcTelegram' width={20} height={20} />
                                     </a>
                                     <a href='https://www.instagram.com/flee.xy1?igsh=YXZ2MHNqNWhsYTRo&utm_source=qr' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
@@ -141,7 +141,7 @@ const DefaultHeader = observer(() => {
                                     <a href='https://whatsapp.com/channel/0029Vb6u88m90x34T43vYd0l' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
                                         <Icon icon='IcWhatsappFilled' width={20} height={20} />
                                     </a>
-                                    <a href='https://t.me/wealthdbottrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                    <a href='https://t.me/Dbottradertrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                         <Icon icon='IcTelegram' width={20} height={20} />
                                     </a>
                                     <a href='https://www.instagram.com/flee.xy1?igsh=YXZ2MHNqNWhsYTRo&utm_source=qr' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
