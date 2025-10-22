@@ -367,13 +367,13 @@ const ToggleMenuDrawer = observer(({ platform_config }) => {
                                             <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
                                                 <Icon icon='IcFacebook' width={22} height={22} />
                                             </a>
-                                            <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                            <a href='https://whatsapp.com/channel/0029Vb6u88m90x34T43vYd0l' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
                                                 <Icon icon='IcWhatsappFilled' width={22} height={22} />
                                             </a>
-                                            <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                            <a href='https://t.me/wealthdbottrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                                 <Icon icon='IcTelegram' width={22} height={22} />
                                             </a>
-                                            <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+                                            <a href='https://www.instagram.com/flee.xy1?igsh=YXZ2MHNqNWhsYTRo&utm_source=qr' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
                                                 <svg width='22' height='22' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
                                                     <defs>
                                                         <linearGradient id='igGradMobile' x1='0%' y1='0%' x2='100%' y2='100%'>
