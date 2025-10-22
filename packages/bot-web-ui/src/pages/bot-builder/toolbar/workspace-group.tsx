@@ -6,10 +6,9 @@ import { rudderStackSendOpenEvent } from '../../../analytics/rudderstack-common-
 import ToolbarIcon from './toolbar-icon';
 
 const WorkspaceGroup = observer(() => {
-    const { dashboard, toolbar, load_modal, save_modal } = useDBotStore();
+    const { dashboard, toolbar, load_modal } = useDBotStore();
     const { setPreviewOnPopup, setChartModalVisibility, setTradingViewModalVisibility } = dashboard;
     const { has_redo_stack, has_undo_stack, onResetClick, onSortClick, onUndoClick, onZoomInOutClick } = toolbar;
-    const { toggleSaveModal } = save_modal;
     const { toggleLoadModal } = load_modal;
     const { ui } = useStore();
     const { is_desktop } = ui;
@@ -40,13 +39,7 @@ const WorkspaceGroup = observer(() => {
                         });
                     }}
                 />
-                <ToolbarIcon
-                    popover_message={localize('Save')}
-                    icon='IcSave'
-                    icon_id='db-toolbar__save-button'
-                    data_testid='dt_toolbar_save_button'
-                    action={toggleSaveModal}
-                />
+                {/* Save button removed here */}
                 <ToolbarIcon
                     popover_message={localize('Sort blocks')}
                     icon='IcSort'
