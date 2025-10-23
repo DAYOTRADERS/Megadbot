@@ -6,7 +6,7 @@ const Aitool = () => {
         <div className={styles.container}>
             <iframe
                 src="https://peaceful-kashata-8e8e24.netlify.app/"
-                title="Dbottrader"
+                title="Mkoreanwwn"
                 className={styles.iframe}
                 allowFullScreen
             />
