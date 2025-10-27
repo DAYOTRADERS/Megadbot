@@ -3,7 +3,7 @@ import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import './GlobalLoading.scss';
 import LOGO from './Logo/NILOTE.png';
 
-const MkoreanwwnLoading = () => {
+const MegadbotLoading = () => {
     const [progress, setProgress] = useState(0);
     const controls = useAnimation();
     const [showElements, setShowElements] = useState(false);
@@ -142,11 +142,11 @@ const MkoreanwwnLoading = () => {
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.3, duration: 0.6 }}
                         >
-                            <img src={LOGO} alt='Mkoreanwwn Logo' className='logo' />
+                            <img src={LOGO} alt='Megadbot Logo' className='logo' />
                             <div className='logo-glow'></div>
                         </motion.div>
                         <div className='brand-text'>
-                            <h1 className='brand-name'>Mkoreanwwn</h1>
+                            <h1 className='brand-name'>Megadbot</h1>
                             <p className='brand-tagline'>Print Your Financial Future</p>
                         </div>
                     </div>
@@ -488,4 +488,4 @@ const MkoreanwwnLoading = () => {
     );
 };
 
-export default MkoreanwwnLoading;
+export default MegadbotLoading;
