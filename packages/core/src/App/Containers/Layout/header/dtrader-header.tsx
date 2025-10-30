@@ -131,7 +131,7 @@ const DTraderHeader = observer(() => {
                                     <a href='https://www.whatsapp.com/channel/0029VbBGKgD1HspoV4HUQw3f' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
                                         <Icon icon='IcWhatsappFilled' width={20} height={20} />
                                     </a>
-                                    <a href='https://t.me/Megadbottrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                    <a href='https://t.me/MegadBottrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                         <Icon icon='IcTelegram' width={20} height={20} />
                                     </a>
                                     <a href='https://www.instagram.com/flee.xy1?igsh=YXZ2MHNqNWhsYTRo&utm_source=qr' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
@@ -153,7 +153,7 @@ const DTraderHeader = observer(() => {
                                 <a href='https://www.whatsapp.com/channel/0029VbBGKgD1HspoV4HUQw3f' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
                                     <Icon icon='IcWhatsappFilled' width={20} height={20} />
                                 </a>
-                                <a href='https://t.me/Megadbottrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                <a href='https://t.me/MegadBottrades' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                     <Icon icon='IcTelegram' width={20} height={20} />
                                 </a>
                                 <a href='https://www.instagram.com/flee.xy1?igsh=YXZ2MHNqNWhsYTRo&utm_source=qr' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>

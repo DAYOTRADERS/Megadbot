@@ -8,7 +8,7 @@ export type TSidebarItem = {
 
 export const SIDEBAR_INTRO: TSidebarItem[] = [
     {
-        label: localize('Welcome to Megadbot'),
+        label: localize('Welcome to MegadBot'),
         content: [
             {
                 data: localize(
